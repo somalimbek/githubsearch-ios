@@ -49,7 +49,8 @@ struct SearchResultListItemView: View {
             name: "Tetris",
             description: "A C implementation of Tetris using Pennsim through LC4",
             stars: 1,
-            language: "Assembly"
+            language: "Assembly",
+            url: "https://github.com/dtrupenn/Tetris"
         )
     )
 }

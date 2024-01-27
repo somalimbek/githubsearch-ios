@@ -15,4 +15,5 @@ struct Repository: Identifiable {
     let description: String
     let stars: Int
     let language: String
+    let url: String
 }

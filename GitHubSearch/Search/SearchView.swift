@@ -9,12 +9,13 @@ import SwiftUI
 
 struct SearchView: View {
 
-    let state: SearchViewState
+    @ObservedObject var state: SearchViewState
     let viewModel: SearchViewModelProtocol
 
     init(state: SearchViewState? = nil, viewModel: SearchViewModelProtocol? = nil) {
-        self.state = state ?? SearchViewState()
-        self.viewModel = viewModel ?? SearchViewModel(viewState: self.state)
+        let stateNotNil = state ?? SearchViewState()
+        self.state = stateNotNil
+        self.viewModel = viewModel ?? SearchViewModel(viewState: stateNotNil)
     }
 
     var body: some View {
@@ -23,7 +24,12 @@ struct SearchView: View {
                 ScrollView {
                     LazyVStack {
                         ForEach(state.resultList) { repository in
-                            SearchResultListItemView(repository: repository)
+                            Button {
+                                viewModel.onItemSelected(repository)
+                            } label: {
+                                SearchResultListItemView(repository: repository)
+                                    .foregroundStyle(.primary)
+                            }
                         }
                     }
                 }
@@ -38,6 +44,30 @@ struct SearchView: View {
                 viewModel.onSearchTextChanged(newText: newValue)
             }
         )
+        .sheet(
+            isPresented: Binding {
+                state.shouldPresentRepositorySheet
+            } set: { newValue in
+                viewModel.onPresentRepositorySheet(newValue: newValue)
+            }
+        ) {
+            if let urlString = state.repositoryURLToOpen,
+               let url = URL(string: urlString) {
+                SafariView(url: url)
+                    .ignoresSafeArea()
+            } else {
+                NavigationStack {
+                    Text("Couln't open repository page")
+                        .toolbar {
+                            ToolbarItem {
+                                Button("Done") {
+                                    viewModel.onPresentRepositorySheet(newValue: false)
+                                }
+                            }
+                        }
+                }
+            }
+        }
     }
 }
 
@@ -52,7 +82,8 @@ struct SearchView: View {
                 name: "Tetris",
                 description: "A C implementation of Tetris using Pennsim through LC4",
                 stars: 1,
-                language: "Assembly"
+                language: "Assembly",
+                url: "https://github.com/dtrupenn/Tetris"
             )
         )
     }

@@ -9,6 +9,8 @@ import Foundation
 
 protocol SearchViewModelProtocol: AnyObject {
     func onSearchTextChanged(newText: String)
+    func onItemSelected(_ selectedItem: Repository)
+    func onPresentRepositorySheet(newValue: Bool)
 }
 
 final class SearchViewModel {
@@ -22,5 +24,14 @@ final class SearchViewModel {
 extension SearchViewModel: SearchViewModelProtocol {
     func onSearchTextChanged(newText: String) {
         viewState.searchText = newText
+    }
+
+    func onItemSelected(_ selectedItem: Repository) {
+        viewState.repositoryURLToOpen = selectedItem.url
+        viewState.shouldPresentRepositorySheet = true
+    }
+
+    func onPresentRepositorySheet(newValue: Bool) {
+        viewState.shouldPresentRepositorySheet = newValue
     }
 }
