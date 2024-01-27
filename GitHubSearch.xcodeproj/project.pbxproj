@@ -13,6 +13,13 @@
 		CFC375982B65112E00688308 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFC375972B65112E00688308 /* Preview Assets.xcassets */; };
 		CFC375A22B65112E00688308 /* GitHubSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC375A12B65112E00688308 /* GitHubSearchTests.swift */; };
 		CFC375C32B651CD700688308 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC375C22B651CD700688308 /* SafariView.swift */; };
+		CFC375C62B651DD600688308 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC375C52B651DD600688308 /* SearchView.swift */; };
+		CFC375CE2B651EBC00688308 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC375CD2B651EBC00688308 /* SearchViewModel.swift */; };
+		CFC375D02B651EC200688308 /* SearchViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC375CF2B651EC200688308 /* SearchViewState.swift */; };
+		CFC375D22B651EE500688308 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC375D12B651EE500688308 /* SearchService.swift */; };
+		CFC375D52B65209100688308 /* SearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC375D42B65209100688308 /* SearchViewModelTests.swift */; };
+		CFC375D82B6521CC00688308 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC375D72B6521CC00688308 /* Repository.swift */; };
+		CFC375DC2B65295D00688308 /* SearchResultListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC375DB2B65295D00688308 /* SearchResultListItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +41,13 @@
 		CFC3759D2B65112E00688308 /* GitHubSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFC375A12B65112E00688308 /* GitHubSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchTests.swift; sourceTree = "<group>"; };
 		CFC375C22B651CD700688308 /* SafariView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		CFC375C52B651DD600688308 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		CFC375CD2B651EBC00688308 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		CFC375CF2B651EC200688308 /* SearchViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewState.swift; sourceTree = "<group>"; };
+		CFC375D12B651EE500688308 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		CFC375D42B65209100688308 /* SearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTests.swift; sourceTree = "<group>"; };
+		CFC375D72B6521CC00688308 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		CFC375DB2B65295D00688308 /* SearchResultListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultListItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				CFC375C12B651CD700688308 /* SafariView */,
+				CFC375C42B651DBB00688308 /* Search */,
 				CFC375902B65112900688308 /* GitHubSearchApp.swift */,
 				CFC375922B65112900688308 /* ContentView.swift */,
 				CFC375942B65112E00688308 /* Assets.xcassets */,
@@ -95,6 +110,7 @@
 		CFC375A02B65112E00688308 /* GitHubSearchTests */ = {
 			isa = PBXGroup;
 			children = (
+				CFC375D32B65207800688308 /* SearchTests */,
 				CFC375A12B65112E00688308 /* GitHubSearchTests.swift */,
 			);
 			path = GitHubSearchTests;
@@ -106,6 +122,51 @@
 				CFC375C22B651CD700688308 /* SafariView.swift */,
 			);
 			path = SafariView;
+			sourceTree = "<group>";
+		};
+		CFC375C42B651DBB00688308 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CFC375D62B6521AF00688308 /* Model */,
+				CFC375CC2B651E7000688308 /* Service */,
+				CFC375DA2B65291D00688308 /* Views */,
+				CFC375C52B651DD600688308 /* SearchView.swift */,
+				CFC375CD2B651EBC00688308 /* SearchViewModel.swift */,
+				CFC375CF2B651EC200688308 /* SearchViewState.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		CFC375CC2B651E7000688308 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CFC375D12B651EE500688308 /* SearchService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		CFC375D32B65207800688308 /* SearchTests */ = {
+			isa = PBXGroup;
+			children = (
+				CFC375D42B65209100688308 /* SearchViewModelTests.swift */,
+			);
+			path = SearchTests;
+			sourceTree = "<group>";
+		};
+		CFC375D62B6521AF00688308 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CFC375D72B6521CC00688308 /* Repository.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CFC375DA2B65291D00688308 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CFC375DB2B65295D00688308 /* SearchResultListItemView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,7 +269,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFC375C62B651DD600688308 /* SearchView.swift in Sources */,
+				CFC375CE2B651EBC00688308 /* SearchViewModel.swift in Sources */,
+				CFC375D02B651EC200688308 /* SearchViewState.swift in Sources */,
+				CFC375D82B6521CC00688308 /* Repository.swift in Sources */,
+				CFC375DC2B65295D00688308 /* SearchResultListItemView.swift in Sources */,
 				CFC375932B65112900688308 /* ContentView.swift in Sources */,
+				CFC375D22B651EE500688308 /* SearchService.swift in Sources */,
 				CFC375C32B651CD700688308 /* SafariView.swift in Sources */,
 				CFC375912B65112900688308 /* GitHubSearchApp.swift in Sources */,
 			);
@@ -218,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFC375D52B65209100688308 /* SearchViewModelTests.swift in Sources */,
 				CFC375A22B65112E00688308 /* GitHubSearchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
