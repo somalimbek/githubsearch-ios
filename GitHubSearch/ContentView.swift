@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isPresentWebView = false
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        Button("Open WebView") {
+            isPresentWebView = true
         }
-        .padding()
+        .sheet(isPresented: $isPresentWebView) {
+            NavigationStack {
+                SafariView(url: URL(string: "https://github.com/signalapp/Signal-iOS")!)
+                    .ignoresSafeArea()
+            }
+        }
     }
 }
 
