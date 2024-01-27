@@ -9,4 +9,5 @@ import Foundation
 
 final class SearchViewState: ObservableObject {
     @Published var resultList: [Repository] = []
+    @Published var searchText: String = ""
 }

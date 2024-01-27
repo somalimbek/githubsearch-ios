@@ -18,17 +18,26 @@ struct SearchView: View {
     }
 
     var body: some View {
-        if !state.resultList.isEmpty {
-            ScrollView {
-                LazyVStack {
-                    ForEach(state.resultList) { repository in
-                        SearchResultListItemView(repository: repository)
+        Group {
+            if !state.resultList.isEmpty {
+                ScrollView {
+                    LazyVStack {
+                        ForEach(state.resultList) { repository in
+                            SearchResultListItemView(repository: repository)
+                        }
                     }
                 }
+            } else {
+                Text("Type in the search bar to earch for repositories")
             }
-        } else {
-            Text("Type in the search bar to earch for repositories")
         }
+        .searchable(
+            text: Binding {
+                state.searchText
+            } set: { newValue in
+                viewModel.onSearchTextChanged(newText: newValue)
+            }
+        )
     }
 }
 
@@ -46,8 +55,9 @@ struct SearchView: View {
                 language: "Assembly"
             )
         )
-
     }
 
-    return SearchView(state: state)
+    return NavigationStack {
+        SearchView(state: state)
+    }
 }

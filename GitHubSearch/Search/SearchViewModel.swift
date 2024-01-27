@@ -8,7 +8,7 @@
 import Foundation
 
 protocol SearchViewModelProtocol: AnyObject {
-    
+    func onSearchTextChanged(newText: String)
 }
 
 final class SearchViewModel {
@@ -20,5 +20,7 @@ final class SearchViewModel {
 }
 
 extension SearchViewModel: SearchViewModelProtocol {
-    
+    func onSearchTextChanged(newText: String) {
+        viewState.searchText = newText
+    }
 }
