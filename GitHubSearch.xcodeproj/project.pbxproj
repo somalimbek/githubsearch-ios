@@ -14,6 +14,7 @@
 		CFC375A22B65112E00688308 /* GitHubSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC375A12B65112E00688308 /* GitHubSearchTests.swift */; };
 		CFC375AC2B65112E00688308 /* GitHubSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC375AB2B65112E00688308 /* GitHubSearchUITests.swift */; };
 		CFC375AE2B65112E00688308 /* GitHubSearchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC375AD2B65112E00688308 /* GitHubSearchUITestsLaunchTests.swift */; };
+		CFC375C32B651CD700688308 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC375C22B651CD700688308 /* SafariView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		CFC375A72B65112E00688308 /* GitHubSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFC375AB2B65112E00688308 /* GitHubSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchUITests.swift; sourceTree = "<group>"; };
 		CFC375AD2B65112E00688308 /* GitHubSearchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CFC375C22B651CD700688308 /* SafariView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		CFC3758F2B65112900688308 /* GitHubSearch */ = {
 			isa = PBXGroup;
 			children = (
+				CFC375C12B651CD700688308 /* SafariView */,
 				CFC375902B65112900688308 /* GitHubSearchApp.swift */,
 				CFC375922B65112900688308 /* ContentView.swift */,
 				CFC375942B65112E00688308 /* Assets.xcassets */,
@@ -125,6 +128,14 @@
 				CFC375AD2B65112E00688308 /* GitHubSearchUITestsLaunchTests.swift */,
 			);
 			path = GitHubSearchUITests;
+			sourceTree = "<group>";
+		};
+		CFC375C12B651CD700688308 /* SafariView */ = {
+			isa = PBXGroup;
+			children = (
+				CFC375C22B651CD700688308 /* SafariView.swift */,
+			);
+			path = SafariView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFC375932B65112900688308 /* ContentView.swift in Sources */,
+				CFC375C32B651CD700688308 /* SafariView.swift in Sources */,
 				CFC375912B65112900688308 /* GitHubSearchApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
