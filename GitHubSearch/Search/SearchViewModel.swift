@@ -6,3 +6,19 @@
 //
 
 import Foundation
+
+protocol SearchViewModelProtocol: AnyObject {
+    
+}
+
+final class SearchViewModel {
+    private let viewState: SearchViewState
+
+    init(viewState: SearchViewState) {
+        self.viewState = viewState
+    }
+}
+
+extension SearchViewModel: SearchViewModelProtocol {
+    
+}
