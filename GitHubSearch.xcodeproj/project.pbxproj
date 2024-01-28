@@ -11,7 +11,6 @@
 		CFC375932B65112900688308 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC375922B65112900688308 /* ContentView.swift */; };
 		CFC375952B65112E00688308 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFC375942B65112E00688308 /* Assets.xcassets */; };
 		CFC375982B65112E00688308 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFC375972B65112E00688308 /* Preview Assets.xcassets */; };
-		CFC375A22B65112E00688308 /* GitHubSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC375A12B65112E00688308 /* GitHubSearchTests.swift */; };
 		CFC375C32B651CD700688308 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC375C22B651CD700688308 /* SafariView.swift */; };
 		CFC375C62B651DD600688308 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC375C52B651DD600688308 /* SearchView.swift */; };
 		CFC375CE2B651EBC00688308 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC375CD2B651EBC00688308 /* SearchViewModel.swift */; };
@@ -43,7 +42,6 @@
 		CFC375942B65112E00688308 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFC375972B65112E00688308 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CFC3759D2B65112E00688308 /* GitHubSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CFC375A12B65112E00688308 /* GitHubSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchTests.swift; sourceTree = "<group>"; };
 		CFC375C22B651CD700688308 /* SafariView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		CFC375C52B651DD600688308 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		CFC375CD2B651EBC00688308 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				CFC375D32B65207800688308 /* SearchTests */,
-				CFC375A12B65112E00688308 /* GitHubSearchTests.swift */,
 			);
 			path = GitHubSearchTests;
 			sourceTree = "<group>";
@@ -309,7 +306,6 @@
 			files = (
 				CFC375D52B65209100688308 /* SearchViewModelTests.swift in Sources */,
 				CFC375E92B66CA3000688308 /* RepositoryMock.swift in Sources */,
-				CFC375A22B65112E00688308 /* GitHubSearchTests.swift in Sources */,
 				CFC375E52B66C01F00688308 /* SearchServiceMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
