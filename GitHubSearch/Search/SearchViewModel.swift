@@ -28,6 +28,8 @@ final class SearchViewModel {
 
 extension SearchViewModel: SearchViewModelProtocol {
     func onSearchTextChanged(newText: String) {
+        guard newText != viewState.searchText else { return }
+        
         viewState.searchText = newText
         Task {
             let resultList = await searchService.searchRepositories(query: newText)
