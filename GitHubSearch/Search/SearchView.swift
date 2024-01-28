@@ -19,7 +19,7 @@ struct SearchView: View {
     }
 
     var body: some View {
-        Group {
+        NavigationStack {
             if !state.resultList.isEmpty {
                 ScrollView {
                     LazyVStack {
