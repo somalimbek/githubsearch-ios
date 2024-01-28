@@ -19,23 +19,32 @@ struct SearchResultListItemView: View {
                 } placeholder: {
                     ProgressView()
                 }
+                .frame(width: 30, height: 30)
+                .clipShape(.rect(cornerRadius: 8))
 
                 Text(repository.owner ?? "")
+                    .foregroundStyle(.secondary)
             }
 
             Text(repository.name)
+                .bold()
 
             Text(repository.description ?? "")
+                .multilineTextAlignment(.leading)
 
             HStack(spacing: 24) {
                 HStack {
                     Image(systemName: "star")
 
                     Text("\(repository.stars)")
+                        .foregroundStyle(.secondary)
                 }
 
                 Text(repository.language ?? "")
+                    .foregroundStyle(.secondary)
             }
+
+            Divider()
         }
     }
 }

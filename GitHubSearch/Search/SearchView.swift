@@ -22,16 +22,17 @@ struct SearchView: View {
         NavigationStack {
             if !state.resultList.isEmpty {
                 ScrollView {
-                    LazyVStack {
+                    LazyVStack(alignment: .leading) {
                         ForEach(state.resultList) { repository in
                             Button {
                                 viewModel.onItemSelected(repository)
                             } label: {
                                 SearchResultListItemView(repository: repository)
-                                    .foregroundStyle(.primary)
+                                    .foregroundColor(.primary)
                             }
                         }
                     }
+                    .padding()
                 }
             } else {
                 Text(state.errorMessage ?? "Type in the search bar to earch for repositories")
