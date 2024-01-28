@@ -40,6 +40,20 @@ final class SearchViewModelTests: XCTestCase {
         XCTAssertEqual(viewState.searchText, searchText)
     }
 
+    func testOnSearchTextChanged_DoesNotFireNetworkCallTwiceForSameText() {
+        // Given
+        viewState.searchText = searchText
+        let expectation = expectation(description: "waiting for response")
+        expectation.isInverted = true
+
+        // When
+        sut.onSearchTextChanged(newText: searchText)
+
+        // Then
+        waitForExpectations(timeout: 1)
+        XCTAssertFalse(searchServiceMock.didCallSearchRepositories)
+    }
+
     func testOnSearchTextChanged_FetchesResults() {
         // Given
         let expectation = expectation(description: "waiting for response")
