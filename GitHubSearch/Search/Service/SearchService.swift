@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol SearchServiceProtocol {
+    func searchRepositories(query: String) -> [Repository]
+}
