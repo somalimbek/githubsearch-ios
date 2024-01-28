@@ -10,6 +10,8 @@ import XCTest
 
 final class SearchViewModelTests: XCTestCase {
 
+    let searchText = "search text"
+
     private var viewState: SearchViewState!
     private var searchServiceMock: SearchServiceMock!
 
@@ -19,13 +21,13 @@ final class SearchViewModelTests: XCTestCase {
         super.setUp()
 
         viewState = SearchViewState()
+        searchServiceMock = SearchServiceMock()
 
         sut = SearchViewModel(viewState: viewState)
     }
 
-    func testOnSearchTextChanged() {
+    func testOnSearchTextChanged_UpdatesSearchText() {
         // Given
-        let searchText = "search text"
         viewState.searchText = ""
 
         // When
@@ -33,6 +35,15 @@ final class SearchViewModelTests: XCTestCase {
 
         // Then
         XCTAssertEqual(viewState.searchText, searchText)
+    }
+
+    func testOnSearchTextChanged_FetchesResults() {
+        // When
+        sut.onSearchTextChanged(newText: searchText)
+
+        // Then
+        XCTAssertTrue(searchServiceMock.didCallSearchRepositories)
+        XCTAssertEqual(searchServiceMock.searchRepositoriesReceivedParameter, searchText)
     }
 
     func testOnItemSelected() {
