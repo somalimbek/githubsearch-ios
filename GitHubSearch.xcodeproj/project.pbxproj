@@ -20,6 +20,7 @@
 		CFC375D52B65209100688308 /* SearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC375D42B65209100688308 /* SearchViewModelTests.swift */; };
 		CFC375D82B6521CC00688308 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC375D72B6521CC00688308 /* Repository.swift */; };
 		CFC375DC2B65295D00688308 /* SearchResultListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC375DB2B65295D00688308 /* SearchResultListItemView.swift */; };
+		CFC375E52B66C01F00688308 /* SearchServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC375E42B66C01F00688308 /* SearchServiceMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		CFC375D42B65209100688308 /* SearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTests.swift; sourceTree = "<group>"; };
 		CFC375D72B6521CC00688308 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		CFC375DB2B65295D00688308 /* SearchResultListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultListItemView.swift; sourceTree = "<group>"; };
+		CFC375E42B66C01F00688308 /* SearchServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServiceMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 		CFC375D32B65207800688308 /* SearchTests */ = {
 			isa = PBXGroup;
 			children = (
+				CFC375E32B66BCC800688308 /* Mock */,
 				CFC375D42B65209100688308 /* SearchViewModelTests.swift */,
 			);
 			path = SearchTests;
@@ -167,6 +170,14 @@
 				CFC375DB2B65295D00688308 /* SearchResultListItemView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CFC375E32B66BCC800688308 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				CFC375E42B66C01F00688308 /* SearchServiceMock.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +298,7 @@
 			files = (
 				CFC375D52B65209100688308 /* SearchViewModelTests.swift in Sources */,
 				CFC375A22B65112E00688308 /* GitHubSearchTests.swift in Sources */,
+				CFC375E52B66C01F00688308 /* SearchServiceMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
