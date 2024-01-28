@@ -11,6 +11,7 @@ import XCTest
 final class SearchViewModelTests: XCTestCase {
 
     private var viewState: SearchViewState!
+    private var searchServiceMock: SearchServiceMock!
 
     private var sut: SearchViewModel!
 
