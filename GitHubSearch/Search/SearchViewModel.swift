@@ -32,9 +32,15 @@ extension SearchViewModel: SearchViewModelProtocol {
         
         viewState.searchText = newText
         Task {
-            let resultList = await searchService.searchRepositories(query: newText)
-            await MainActor.run {
-                viewState.resultList = resultList
+            do {
+                let resultList = try await searchService.searchRepositories(query: newText)
+                await MainActor.run {
+                    viewState.resultList = resultList
+                }
+            } catch let error {
+                await MainActor.run {
+                    viewState.errorMessage = error.localizedDescription
+                }
             }
         }
     }

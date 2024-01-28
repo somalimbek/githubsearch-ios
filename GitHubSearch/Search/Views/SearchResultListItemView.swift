@@ -20,12 +20,12 @@ struct SearchResultListItemView: View {
                     ProgressView()
                 }
 
-                Text(repository.owner)
+                Text(repository.owner ?? "")
             }
 
             Text(repository.name)
 
-            Text(repository.description)
+            Text(repository.description ?? "")
 
             HStack(spacing: 24) {
                 HStack {
@@ -34,7 +34,7 @@ struct SearchResultListItemView: View {
                     Text("\(repository.stars)")
                 }
 
-                Text(repository.language)
+                Text(repository.language ?? "")
             }
         }
     }

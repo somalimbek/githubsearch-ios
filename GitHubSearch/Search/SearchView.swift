@@ -34,7 +34,7 @@ struct SearchView: View {
                     }
                 }
             } else {
-                Text("Type in the search bar to earch for repositories")
+                Text(state.errorMessage ?? "Type in the search bar to earch for repositories")
             }
         }
         .searchable(

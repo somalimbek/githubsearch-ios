@@ -12,4 +12,5 @@ final class SearchViewState: ObservableObject {
     @Published var searchText: String = ""
     @Published var repositoryURLToOpen: String? = nil
     @Published var shouldPresentRepositorySheet: Bool = false
+    @Published var errorMessage: String?
 }

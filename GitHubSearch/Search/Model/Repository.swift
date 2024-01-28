@@ -10,11 +10,11 @@ import Foundation
 struct Repository: Identifiable, Decodable {
     let id: Int
     let avatarURL: String
-    let owner: String
+    let owner: String?
     let name: String
-    let description: String
+    let description: String?
     let stars: Int
-    let language: String
+    let language: String?
     let url: String
 
     enum CodingKeys: String, CodingKey {
@@ -24,7 +24,7 @@ struct Repository: Identifiable, Decodable {
         case description
         case stars = "stargazers_count"
         case language
-        case url
+        case url = "html_url"
     }
 
     enum OwnerKeys: String, CodingKey {
@@ -38,11 +38,31 @@ struct Repository: Identifiable, Decodable {
 
         id = try container.decode(Int.self, forKey: .id)
         avatarURL = try ownerContainer.decode(String.self, forKey: .avatarURL)
-        owner = try ownerContainer.decode(String.self, forKey: .owner)
+        owner = try ownerContainer.decode(String?.self, forKey: .owner)
         name = try container.decode(String.self, forKey: .name)
-        description = try container.decode(String.self, forKey: .description)
+        description = try container.decode(String?.self, forKey: .description)
         stars = try container.decode(Int.self, forKey: .stars)
-        language = try container.decode(String.self, forKey: .language)
+        language = try container.decode(String?.self, forKey: .language)
         url = try container.decode(String.self, forKey: .url)
+    }
+
+    init(
+        id: Int,
+        avatarURL: String,
+        owner: String,
+        name: String,
+        description: String,
+        stars: Int,
+        language: String,
+        url: String
+    ) {
+        self.id = id
+        self.avatarURL = avatarURL
+        self.owner = owner
+        self.name = name
+        self.description = description
+        self.stars = stars
+        self.language = language
+        self.url = url
     }
 }
