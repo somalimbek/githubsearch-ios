@@ -23,7 +23,10 @@ final class SearchViewModelTests: XCTestCase {
         viewState = SearchViewState()
         searchServiceMock = SearchServiceMock()
 
-        sut = SearchViewModel(viewState: viewState)
+        sut = SearchViewModel(
+            viewState: viewState,
+            searchService: searchServiceMock
+        )
     }
 
     func testOnSearchTextChanged_UpdatesSearchText() {

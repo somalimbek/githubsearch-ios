@@ -15,15 +15,21 @@ protocol SearchViewModelProtocol: AnyObject {
 
 final class SearchViewModel {
     private let viewState: SearchViewState
+    private let searchService: SearchServiceProtocol
 
-    init(viewState: SearchViewState) {
+    init(
+        viewState: SearchViewState,
+        searchService: SearchServiceProtocol? = nil
+    ) {
         self.viewState = viewState
+        self.searchService = searchService ?? SearchService()
     }
 }
 
 extension SearchViewModel: SearchViewModelProtocol {
     func onSearchTextChanged(newText: String) {
         viewState.searchText = newText
+        searchService.searchRepositories(query: newText)
     }
 
     func onItemSelected(_ selectedItem: Repository) {

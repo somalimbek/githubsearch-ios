@@ -10,3 +10,13 @@ import Foundation
 protocol SearchServiceProtocol {
     func searchRepositories(query: String) -> [Repository]
 }
+
+final class SearchService {
+
+}
+
+extension SearchService: SearchServiceProtocol {
+    func searchRepositories(query: String) -> [Repository] {
+        return []
+    }
+}
