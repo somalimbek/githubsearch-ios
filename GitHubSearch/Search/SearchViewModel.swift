@@ -29,7 +29,12 @@ final class SearchViewModel {
 extension SearchViewModel: SearchViewModelProtocol {
     func onSearchTextChanged(newText: String) {
         viewState.searchText = newText
-        viewState.resultList = searchService.searchRepositories(query: newText)
+        Task {
+            let resultList = await searchService.searchRepositories(query: newText)
+            await MainActor.run {
+                viewState.resultList = resultList
+            }
+        }
     }
 
     func onItemSelected(_ selectedItem: Repository) {

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol SearchServiceProtocol {
-    func searchRepositories(query: String) -> [Repository]
+    func searchRepositories(query: String) async -> [Repository]
 }
 
 final class SearchService {
@@ -16,7 +16,7 @@ final class SearchService {
 }
 
 extension SearchService: SearchServiceProtocol {
-    func searchRepositories(query: String) -> [Repository] {
+    func searchRepositories(query: String) async -> [Repository] {
         return []
     }
 }

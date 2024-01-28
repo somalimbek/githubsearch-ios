@@ -15,7 +15,7 @@ final class SearchServiceMock {
 }
 
 extension SearchServiceMock: SearchServiceProtocol {
-    func searchRepositories(query: String) -> [Repository] {
+    func searchRepositories(query: String) async -> [Repository] {
         didCallSearchRepositories = true
         searchRepositoriesReceivedParameter = query
 

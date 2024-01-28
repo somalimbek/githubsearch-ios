@@ -42,6 +42,8 @@ final class SearchViewModelTests: XCTestCase {
 
     func testOnSearchTextChanged_FetchesResults() {
         // Given
+        let expectation = expectation(description: "waiting for response")
+        expectation.isInverted = true
         searchServiceMock.result = [RepositoryMock.repository]
         viewState.resultList = []
 
@@ -49,6 +51,7 @@ final class SearchViewModelTests: XCTestCase {
         sut.onSearchTextChanged(newText: searchText)
 
         // Then
+        waitForExpectations(timeout: 1)
         XCTAssertTrue(searchServiceMock.didCallSearchRepositories)
         XCTAssertEqual(searchServiceMock.searchRepositoriesReceivedParameter, searchText)
         XCTAssertFalse(viewState.resultList.isEmpty)
