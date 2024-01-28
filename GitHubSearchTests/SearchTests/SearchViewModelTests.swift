@@ -41,17 +41,22 @@ final class SearchViewModelTests: XCTestCase {
     }
 
     func testOnSearchTextChanged_FetchesResults() {
+        // Given
+        searchServiceMock.result = [RepositoryMock.repository]
+        viewState.resultList = []
+
         // When
         sut.onSearchTextChanged(newText: searchText)
 
         // Then
         XCTAssertTrue(searchServiceMock.didCallSearchRepositories)
         XCTAssertEqual(searchServiceMock.searchRepositoriesReceivedParameter, searchText)
+        XCTAssertFalse(viewState.resultList.isEmpty)
     }
 
     func testOnItemSelected() {
         // Given
-        let selectedItem = repositoryMock
+        let selectedItem = RepositoryMock.repository
         viewState.repositoryURLToOpen = nil
         viewState.shouldPresentRepositorySheet = false
 
@@ -72,22 +77,5 @@ final class SearchViewModelTests: XCTestCase {
 
         // Then
         XCTAssertTrue(viewState.shouldPresentRepositorySheet)
-    }
-}
-
-// MARK: Helpers
-
-private extension SearchViewModelTests {
-    var repositoryMock: Repository {
-        .init(
-            id: 1,
-            avatarURL: "https://secure.gravatar.com/avatar/e7956084e75f239de85d3a31bc172ace?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
-            owner: "dtrupenn",
-            name: "Tetris",
-            description: "A C implementation of Tetris using Pennsim through LC4",
-            stars: 1,
-            language: "Assembly",
-            url: "https://github.com/dtrupenn/Tetris"
-        )
     }
 }
